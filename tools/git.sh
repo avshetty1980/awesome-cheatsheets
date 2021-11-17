@@ -15,8 +15,12 @@ git status         # shows the modifications and stuff that are not staged yet
 git branch                         # shows all the branches (current branch is shown with a star)
 git branch my-branch               # creates my-branch
 git branch -d my-branch            # deletes my-branch
+git branch -D my-branch            # forces delete my-branch
+git branch --merged                # which commits from other branches have been included in current branch (useful when deleting branches)
 git checkout my-branch         	   # switches to my-branch
+git checkout -b my_branch          # creates new branch and checksout
 git merge my-branch                # merges my-branch to current branch
+git branch --no-merged             # changes in other branches that have not been merged into current branch
 git push origin --delete my-branch # delete remote branch
 git branch -m <new-branch-name>    # rename the branch
 git checkout --orphan <branch_name> # checkout a branch with no commit history
@@ -50,6 +54,7 @@ git revert <commit-id>       # Undo a commit by creating a new commit
 
 git show                     # shows one or more objects (blobs, trees, tags and commits).
 git diff                     # show changes between commits, commit and working tree
+git diff <branch_name>..<branch_name>   #difference between commits
 git diff --color             # show colored diff
 git diff --staged            # Shows changes staged for commit
 
